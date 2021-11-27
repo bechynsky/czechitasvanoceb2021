@@ -1,9 +1,11 @@
 package cz.czechitas.vanoceb.vanoceb.controller;
 
+import org.springframework.http.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import cz.czechitas.vanoceb.vanoceb.dto.*;
 import cz.czechitas.vanoceb.vanoceb.entity.*;
+import cz.czechitas.vanoceb.vanoceb.form.*;
 import cz.czechitas.vanoceb.vanoceb.service.*;
 
 @RestController
@@ -28,7 +30,13 @@ public class HlavniController {
         return praniService.getOstatniPrani();
     }
 
-    
+    @PostMapping("/pridat-prani")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void pridatPrani(@RequestBody PraniForm praniForm) {
+        praniService.save(praniForm);
+    }
+
+
             
 
  
