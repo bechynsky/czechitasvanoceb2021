@@ -36,11 +36,10 @@ public class HlavniController {
         praniService.save(praniForm);
     }
 
-
-            
-
- 
-
+    @PostMapping("/smazat-prani")
+    public void smazatPrani(Long id) {
+        praniService.delete(id);
+    }
 
 
 

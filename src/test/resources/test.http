@@ -18,3 +18,6 @@ Content-Type: application/json
 {"nazevPrani": "kamen mudrcu"}
 
 ###
+POST http://localhost:8080/smazat-prani?id=3
+
+###
