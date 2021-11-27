@@ -27,7 +27,14 @@ public class PraniService implements IPraniService {
         return StreamSupport.stream(praniIterable.spliterator(), false)
                 .map(this::praniConvert)
                 .collect(Collectors.toList());
+    }
 
+    @Override
+    public Iterable<PraniDTO> getOstatniPrani() {
+        Iterable<Prani> praniIterable = praniRepository.findByProKoho_IdNot(aktualniPrihlasenyUzivatel());
+        return StreamSupport.stream(praniIterable.spliterator(), false)
+                .map(this::praniConvert)
+                .collect(Collectors.toList());
     }
 
     @Override

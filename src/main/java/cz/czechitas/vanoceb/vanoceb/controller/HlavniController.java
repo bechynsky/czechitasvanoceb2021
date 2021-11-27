@@ -8,7 +8,7 @@ import cz.czechitas.vanoceb.vanoceb.service.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("")
+@RequestMapping
 
 public class HlavniController {
 
@@ -18,10 +18,17 @@ public class HlavniController {
         this.praniService = praniService;
     }
 
-    @GetMapping(value = "/moje-prani")
+    @GetMapping("/moje-prani")
     public Iterable<PraniDTO> mojePrani() {
         return praniService.getMojePrani();
     }
+
+    @GetMapping("/ostatni-prani")
+    public Iterable<PraniDTO> ostatniPrani() {
+        return praniService.getOstatniPrani();
+    }
+
+    
             
 
  

@@ -7,6 +7,8 @@ public interface IPraniService {
 
     public Iterable<PraniDTO> getMojePrani();
 
+    public Iterable<PraniDTO> getOstatniPrani();
+
     public void save(PraniForm novePrani);
 
     public void delete(Long id);

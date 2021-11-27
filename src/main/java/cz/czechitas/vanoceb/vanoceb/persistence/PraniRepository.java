@@ -8,6 +8,7 @@ import cz.czechitas.vanoceb.vanoceb.entity.*;
 public interface PraniRepository extends CrudRepository<Prani, Long>  {
 
     Iterable<Prani> findByProKoho_Id(Long uzivatelId);
+    Iterable<Prani> findByProKoho_IdNot(Long uzivatelId);
     
 
 

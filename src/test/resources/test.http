@@ -8,3 +8,7 @@ GET http://localhost:8080/moje-prani
 Accept: application/json
 
 ###
+GET http://localhost:8080/ostatni-prani
+Accept: application/json
+
+###
