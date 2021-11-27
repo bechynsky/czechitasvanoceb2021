@@ -12,3 +12,12 @@ GET http://localhost:8080/ostatni-prani
 Accept: application/json
 
 ###
+POST http://localhost:8080/pridat-prani
+Content-Type: application/json
+
+{"nazevPrani": "kamen mudrcu"}
+
+###
+POST http://localhost:8080/smazat-prani?id=3
+
+###

@@ -40,7 +40,7 @@ public class PraniService implements IPraniService {
     @Override
     public void save(PraniForm novePrani) {
         Prani pridanePrani = new Prani();
-        Optional<Uzivatel> uzivatel = uzivatelRepository.findById(novePrani.getJmenoId());
+        Optional<Uzivatel> uzivatel = uzivatelRepository.findById(aktualniPrihlasenyUzivatel());
         pridanePrani.setProKoho(uzivatel.get());
         pridanePrani.setNazevPrani(novePrani.getNazevPrani());
         praniRepository.save(pridanePrani);
@@ -57,6 +57,8 @@ public class PraniService implements IPraniService {
 
     private PraniDTO praniConvert (Prani prani) {
         PraniDTO praniDTO = new PraniDTO();
+        praniDTO.setId(prani.getId());
+        praniDTO.setVersion(prani.getVersion());
         praniDTO.setJmenoProKoho(prani.getProKoho().getJmeno());
         praniDTO.setNazevPrani(prani.getNazevPrani());
         if (prani.getNavrhl() != null) {
